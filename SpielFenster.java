@@ -6,7 +6,7 @@ public class SpielFenster extends Frame{
 	public SpielFenster (String Titel) {
 		
 		this.setTitle(Titel);
-		this.setSize(640,640);
+		this.setSize(640,640+38);
 				
 		this.addWindowListener(new WindowAdapter() {
 			

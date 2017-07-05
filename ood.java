@@ -10,7 +10,7 @@ public class ood {
 		
 		Frame HauptFenster = new SpielFenster("Office of Doom");
 		HauptFenster.setLocation(500, 250);
-		Canvas SpielFeld= new SpielFeld(xAv, yAv);
+		Canvas SpielFeld= new SpielFeld();
 		
 		HauptFenster.add(SpielFeld);
 		HauptFenster.setVisible(true);

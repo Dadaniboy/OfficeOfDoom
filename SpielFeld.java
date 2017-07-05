@@ -5,14 +5,13 @@ import java.awt.event.KeyListener;
 public class SpielFeld extends Canvas implements KeyListener{
 	
 	private static final long serialVersionUID = -8853917516097245471L;
-	private int xAv, yAv;
+	int xAv, yAv;
 		
 	
-	public SpielFeld (int xAv, int yAv) {
+	public SpielFeld () {
 		
-		this.xAv = xAv;
-		this.yAv = yAv;
 		this.setBackground(Color.DARK_GRAY);
+		this.setFocusable(true);
 		addKeyListener(this);
 		
 	}
@@ -25,48 +24,47 @@ public class SpielFeld extends Canvas implements KeyListener{
 		
 	}
 
-	public int getyAv() {
-		return yAv;
-	}
-
-	public void setyAv(int yAv) {
-		this.yAv = yAv;
-	}
-
-	public int getxAv() {
-		return xAv;
-	}
-
-	public void setxAv(int xAv) {
-		this.xAv = xAv;
-	}
-	
 	public void avDown() {
-		
-		yAv =- 64;
+		if (yAv < 640-64){
+		yAv = yAv + 64;}
 		this.repaint();
 		
 	}
+	
+	public void avUp() {
+		if (yAv > 0){
+			yAv = yAv - 64;}
+		this.repaint();}
+	
+	public void avLeft() {
+		if (xAv > 0){
+			xAv = xAv - 64;}
+		this.repaint();}
+	
+	public void avRight() {
+		if (xAv < 640-64){
+			xAv = xAv + 64;}
+		this.repaint();}
+	
 
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int code = e.getKeyCode();
-		System.out.println(e.getKeyCode());
 
         if (code == KeyEvent.VK_UP){
+        	avUp();
         }
 
         if (code == KeyEvent.VK_DOWN){
         	avDown();
-        	System.out.println("HUlapalu");
         }
 
         if (code == KeyEvent.VK_LEFT){
-
+        	avLeft();
         }
 
         if (code == KeyEvent.VK_RIGHT){
-
+        	avRight();
         }
 		
 	}
