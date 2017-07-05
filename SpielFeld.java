@@ -29,7 +29,7 @@ public class SpielFeld extends Canvas implements KeyListener{
 		
 		// Avatar laden in avatar
 		try {
-			File sourceimage = new File("avatar.png");
+			File sourceimage = new File("faxavatar.png");
 			avatar = ImageIO.read(sourceimage);}
 		catch (IOException e) {
 		 	e.printStackTrace();}

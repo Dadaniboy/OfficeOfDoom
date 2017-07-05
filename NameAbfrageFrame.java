@@ -4,6 +4,8 @@ import java.awt.event.*;
 public class NameAbfrageFrame extends Frame {
 	
 	String SpielerName = "";
+	TextField NamensEingabe = new TextField();
+
 	
 	Button okay = new Button("Okay"){
 		
@@ -14,14 +16,16 @@ public class NameAbfrageFrame extends Frame {
 		}
 		
 	};
-	TextField NamensEingabe = new TextField();
-	
+		
 	NameAbfrageFrame () {
 		
 		setTitle("Bitte Namen eingeben, Bürokraft!");
-		add(okay);
 		add(NamensEingabe);
+		NamensEingabe.setSize(50,50);
+		add(okay);
+		okay.setSize(80, 50);
 		setSize(300,100);
+		setLayout(new GridLayout());
 				
 		addWindowListener(new WindowAdapter() {
 			
@@ -31,7 +35,6 @@ public class NameAbfrageFrame extends Frame {
 				}
 			
 		});
-		
 		setResizable(false);
 		
 	}

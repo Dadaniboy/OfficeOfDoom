@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.event.*;
 
 public class ood {
 
@@ -7,8 +6,10 @@ public class ood {
 		
 		String SpielerName = "";
 		
-		// Frame NamensAbfrage = new NameAbfrageFrame();
-		// NamensAbfrage.setVisible(true);
+		Frame NamensAbfrage = new NameAbfrageFrame();
+		NamensAbfrage.setVisible(true);
+		
+		
 						
 		Frame HauptFenster = new SpielFenster("Office of Doom - "+ SpielerName);
 		HauptFenster.setLocation(500, 250);
