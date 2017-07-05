@@ -4,11 +4,13 @@ import java.awt.event.*;
 public class ood {
 
 	public static void main(String[] args) {
-
-		int xAv, yAv;
-		xAv = yAv = 0;
 		
-		Frame HauptFenster = new SpielFenster("Office of Doom");
+		String SpielerName = "";
+		
+		// Frame NamensAbfrage = new NameAbfrageFrame();
+		// NamensAbfrage.setVisible(true);
+						
+		Frame HauptFenster = new SpielFenster("Office of Doom - "+ SpielerName);
 		HauptFenster.setLocation(500, 250);
 		Canvas SpielFeld= new SpielFeld();
 		
