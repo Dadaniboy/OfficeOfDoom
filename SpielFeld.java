@@ -1,12 +1,17 @@
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
+import java.io.*;
+import javax.imageio.ImageIO;
+
 
 public class SpielFeld extends Canvas implements KeyListener{
 	
 	private static final long serialVersionUID = -8853917516097245471L;
 	int xAv, yAv;
-		
+	Image bkgrnd = null;
+	Image avatar = null;	
 	
 	public SpielFeld () {
 		
@@ -14,13 +19,27 @@ public class SpielFeld extends Canvas implements KeyListener{
 		this.setFocusable(true);
 		addKeyListener(this);
 		
+		
+		// Hintergrund laden in bkgrnd
+		try {
+			File sourceimage = new File("floor.png");
+			bkgrnd = ImageIO.read(sourceimage);}
+		catch (IOException e) {
+	    	e.printStackTrace();}
+		
+		// Avatar laden in avatar
+		try {
+			File sourceimage = new File("avatar.png");
+			avatar = ImageIO.read(sourceimage);}
+		catch (IOException e) {
+		   	e.printStackTrace();}
+				
 	}
 	
 	@Override
 	public void paint (Graphics g) {
-		
-		g.setColor(Color.RED);
-		g.drawOval(xAv, yAv, 64, 64);
+		g.drawImage(bkgrnd, 0, 0, null);
+		g.drawImage(avatar, xAv, yAv, null);
 		
 	}
 
