@@ -46,9 +46,12 @@ public class NameAbfrageFrame extends Frame implements MouseListener {
 		
 	}
 	
+	
 
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
+		
+		
 		
 		SpielerName = NamensEingabe.getText();
 		Frame HauptFenster = new SpielFenster("Office of Doom - "+ SpielerName);
