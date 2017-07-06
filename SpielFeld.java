@@ -27,7 +27,7 @@ public class SpielFeld extends Canvas implements KeyListener{
 		
 		// Hintergrund laden in bkgrnd
 		try {
-			File sourceimage = new File("Recources/LevelBackground/floor.png");
+			File sourceimage = new File("Recources/LevelBackground/floor1.png");
 			bkgrnd = ImageIO.read(sourceimage);}
 		catch (IOException e) {
 	    	e.printStackTrace();
