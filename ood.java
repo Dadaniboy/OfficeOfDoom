@@ -4,20 +4,15 @@ public class ood {
 
 	public static void main(String[] args) {
 		
-		String SpielerName = "";
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		
-		Frame NamensAbfrage = new NameAbfrageFrame();
-		NamensAbfrage.setVisible(true);
+		Frame SpielFenster = new SpielFenster("Office of Doom");
+		SpielFenster.setLocation((dim.width/2)-320,(dim.height/2)-339);
 		
-		
-						
-		Frame HauptFenster = new SpielFenster("Office of Doom - "+ SpielerName);
-		HauptFenster.setLocation(500, 250);
-		Canvas SpielFeld= new SpielFeld();
-		
-		HauptFenster.add(SpielFeld);
-		HauptFenster.setVisible(true);
-		
+		Canvas SpielFeld = new SpielFeld();
+		SpielFenster.add(SpielFeld);
+		SpielFenster.setVisible(true);
+
 		
 	}
 
