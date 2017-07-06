@@ -1,8 +1,12 @@
-import java.awt.*;
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
 import java.io.IOException;
-import java.io.*;
+
 import javax.imageio.ImageIO;
 
 
@@ -17,22 +21,26 @@ public class SpielFeld extends Canvas implements KeyListener{
 		
 		this.setBackground(Color.DARK_GRAY);
 		this.setFocusable(true);
+		this.setSize(getWidth(), getHeight());
 		addKeyListener(this);
 		
 		
 		// Hintergrund laden in bkgrnd
 		try {
-			File sourceimage = new File("floor.png");
+			File sourceimage = new File("Recources/LevelBackground/floor.png");
 			bkgrnd = ImageIO.read(sourceimage);}
 		catch (IOException e) {
-	    	e.printStackTrace();}
-		
+	    	e.printStackTrace();
+			System.out.println("Hintergrund kann nicht geladen werden");
+		}
 		// Avatar laden in avatar
 		try {
-			File sourceimage = new File("faxavatar.png");
+			File sourceimage = new File("Recources/Avatars/Avatar1.png");
 			avatar = ImageIO.read(sourceimage);}
 		catch (IOException e) {
-		 	e.printStackTrace();}
+		 	e.printStackTrace();
+			System.out.println("Avatar kann nicht geladen werden");
+		}
 				
 	}
 	

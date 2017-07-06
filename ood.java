@@ -1,18 +1,24 @@
-import java.awt.*;
+//import java.awt.Canvas;
+import java.awt.Frame;
 
 public class ood {
 
 	public static void main(String[] args) {
 		
-		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		
-		Frame SpielFenster = new SpielFenster("Office of Doom");
-		SpielFenster.setLocation((dim.width/2)-320,(dim.height/2)-339);
 		
-		Canvas SpielFeld = new SpielFeld();
-		SpielFenster.add(SpielFeld);
-		SpielFenster.setVisible(true);
-
+		Frame NamensAbfrage = new NameAbfrageFrame();
+		NamensAbfrage.setVisible(true);
+		
+		
+		/*			
+		Frame HauptFenster = new SpielFenster("Office of Doom - "+ SpielerName);
+		HauptFenster.setLocation(500, 250);
+		Canvas SpielFeld= new SpielFeld();
+		
+		HauptFenster.add(SpielFeld);
+		HauptFenster.setVisible(true);
+		*/
 		
 	}
 
