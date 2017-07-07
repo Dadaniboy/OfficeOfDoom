@@ -18,10 +18,9 @@ public class SpielFeld extends Canvas implements KeyListener{
 	private static final long serialVersionUID = -8853917516097245471L;
 	final int Die64 = 64; // Zur einfacheren Angabe von Koordinaten, jedes Feld hat 64 x 64 pixel
 	
-	// Variablen zur Behandlung von beweglichen Objekten
-	
+	// Variablen zur Behandlung von beweglichen Objekten anlegen und initialisieren
 	Akte[][] Akten = new Akte[9][9]; // Array zur Behandlung von Akten
-	Zombie [][] Zombies = new Zombie[9][9];
+	Zombie [][] Zombies = new Zombie[9][9]; // Array zur Behandlung von Zombies
 	Spieler Avatar = new Spieler();
 		
 	// Referenzvariablen für Bilder
