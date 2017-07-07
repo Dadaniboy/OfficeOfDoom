@@ -28,6 +28,7 @@ public class SpielFeld extends Canvas implements KeyListener{
 	Image avatar = null;
 	Image inbox = null;
 	Image akte = null;
+	Image zombie = null;
 	
 	public SpielFeld () {
 		
@@ -68,6 +69,15 @@ public class SpielFeld extends Canvas implements KeyListener{
 		catch (IOException e) {
 		 	e.printStackTrace();
 			System.out.println("Akte kann nicht geladen werden");
+		}
+		
+		// Zombie laden in zombie
+				try {
+					File sourceimage = new File("Recources/Avatars/Zombie.png");
+					zombie = ImageIO.read(sourceimage);}
+				catch (IOException e) {
+				 	e.printStackTrace();
+					System.out.println("Zombie kann nicht geladen werden");
 		}
 				
 	}
