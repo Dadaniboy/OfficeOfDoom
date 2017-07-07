@@ -13,6 +13,7 @@ import javax.imageio.ImageIO;
 public class SpielFeld extends Canvas implements KeyListener{
 	
 	private static final long serialVersionUID = -8853917516097245471L;
+	final int Die64 = 64; // Zur einfacheren Angabe von Koordinaten, jedes Feld hat 64 x 64 pixel
 	int xAv, yAv;
 	Image bkgrnd = null;
 	Image avatar = null;
@@ -65,11 +66,18 @@ public class SpielFeld extends Canvas implements KeyListener{
 	
 	@Override
 	public void paint (Graphics g) {
-		g.drawImage(bkgrnd, 0, 0, null);
-		g.drawImage(avatar, xAv, yAv, null);
-		g.drawImage(inbox, 512-64, 0, null);
-		g.drawImage(akte, 512+64, 0, null); // nur zum testen
 		
+		// Zeichnen der statischen Objekte
+		
+		g.drawImage(bkgrnd, 0, 0, null);
+		g.drawImage(inbox, 7*Die64, 0, null);
+		
+		// Zeichnen der dynamischen Objekte
+		
+		g.drawImage(avatar, xAv, yAv, null);
+		g.drawImage(akte, 6*Die64, 0, null); // nur zum testen
+		
+
 	}
 
 	public void avDown() {
@@ -94,6 +102,10 @@ public class SpielFeld extends Canvas implements KeyListener{
 			xAv = xAv + 64;}
 		this.repaint();}
 	
+	public void avWait() {
+		this.repaint();
+	}
+	
 
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -113,6 +125,10 @@ public class SpielFeld extends Canvas implements KeyListener{
 
         if (code == KeyEvent.VK_RIGHT){
         	avRight();
+        }
+        
+        if (code == KeyEvent.VK_SPACE){
+        	avWait();
         }
 		
 	}
