@@ -1,5 +1,4 @@
 import java.awt.Button;
-import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.GridLayout;
@@ -15,9 +14,8 @@ import java.awt.event.WindowEvent;
 
 public class NameAbfrageFrame extends Frame implements MouseListener, KeyListener{
 	
-	/**
-	 * 
-	 */
+	// Frägt den Namen des Spielers ab und übergibt diesen dann an das erzeugte Spielfeld
+	
 	private static final long serialVersionUID = 12131L;
 	String SpielerName = "";
 	TextField NamensEingabe = new TextField();

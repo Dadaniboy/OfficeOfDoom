@@ -5,9 +5,8 @@ import java.awt.event.WindowEvent;
 
 public class SpielFenster extends Frame{
 	
-	/**
-	 * 
-	 */
+	// Erzeugt das Hauptfenster und fügt das Spielfeld in einer Area hinzu
+	
 	private static final long serialVersionUID = 12231L;
 
 	public SpielFenster (String Titel) {

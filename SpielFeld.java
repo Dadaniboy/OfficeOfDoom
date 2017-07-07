@@ -12,9 +12,20 @@ import javax.imageio.ImageIO;
 
 public class SpielFeld extends Canvas implements KeyListener{
 	
+	// Implementiert die eigentliche Spielmechanik
+	
+	// Konstanten	
 	private static final long serialVersionUID = -8853917516097245471L;
 	final int Die64 = 64; // Zur einfacheren Angabe von Koordinaten, jedes Feld hat 64 x 64 pixel
-	int xAv, yAv;
+	
+	// Variablen zur Behandlung von beweglichen Objekten
+	
+	Akte[][] Akten = new Akte[9][9]; // Array zur Behandlung von Akten
+	Zombie [][] Zombies = new Zombie[9][9];
+	Spieler Avatar = new Spieler();
+	int xAv, yAv; // Position des Spielers, 0 - 9
+		
+	// Referenzvariablen für Bilder
 	Image bkgrnd = null;
 	Image avatar = null;
 	Image inbox = null;
@@ -26,8 +37,7 @@ public class SpielFeld extends Canvas implements KeyListener{
 		this.setFocusable(true);
 		this.setSize(getWidth(), getHeight());
 		addKeyListener(this);
-		
-		
+				
 		// Hintergrund laden in bkgrnd
 		try {
 			File sourceimage = new File("Recources/LevelBackground/floor1.png");
@@ -74,32 +84,31 @@ public class SpielFeld extends Canvas implements KeyListener{
 		
 		// Zeichnen der dynamischen Objekte
 		
-		g.drawImage(avatar, xAv, yAv, null);
+		g.drawImage(avatar, xAv*Die64, yAv*Die64, null);
 		g.drawImage(akte, 6*Die64, 0, null); // nur zum testen
 		
 
 	}
 
 	public void avDown() {
-		if (yAv < 640-64){
-		yAv = yAv + 64;}
+		if (yAv < 9){
+		yAv = yAv + 1;}
 		this.repaint();
-		
 	}
 	
 	public void avUp() {
 		if (yAv > 0){
-			yAv = yAv - 64;}
+			yAv = yAv - 1;}
 		this.repaint();}
 	
 	public void avLeft() {
 		if (xAv > 0){
-			xAv = xAv - 64;}
+			xAv = xAv - 1;}
 		this.repaint();}
 	
 	public void avRight() {
-		if (xAv < 640-64){
-			xAv = xAv + 64;}
+		if (xAv < 9){
+			xAv = xAv + 1;}
 		this.repaint();}
 	
 	public void avWait() {
