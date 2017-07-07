@@ -1,3 +1,5 @@
+Allgemeine Ziele:
+
 Leertaste erzeugt Pause
 Feld einführen mit betretbaren Kacheln
 Schreibtisch / Inbox und Bürotrenner / Büros
@@ -8,4 +10,8 @@ Methode für Zombiebewegun und erzeugung
 Methode für Aktenerzeugung
 Methode für Anzeige Ereignisfeld und Score
 
-Zuerst Aktenverhalten und unten die Textfelder  modelieren und Ausstattung
+Nächster Schritt
+
+Aktenverhalten spawning / aufnehmen und abliefern
+Textfelder  modelieren und Verhalten implementieren
+
