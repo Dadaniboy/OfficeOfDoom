@@ -20,8 +20,11 @@ public class SpielFeld extends Canvas implements KeyListener{
 	
 	// Variablen zur Behandlung von beweglichen Objekten anlegen und initialisieren
 	Akte[][] Akten = new Akte[9][9]; // Array zur Behandlung von Akten
-	Zombie [][] Zombies = new Zombie[9][9]; // Array zur Behandlung von Zombies
+	Zombie[][] Zombies = new Zombie[9][9]; // Array zur Behandlung von Zombies
 	Spieler Avatar = new Spieler();
+	
+	// Sonstige Variablen
+	int Score = 0;
 		
 	// Referenzvariablen für Bilder
 	Image bkgrnd = null;
@@ -95,31 +98,58 @@ public class SpielFeld extends Canvas implements KeyListener{
 		g.drawImage(avatar, Avatar.getX()*Die64, Avatar.getY()*Die64, null);
 		g.drawImage(akte, 6*Die64, 0, null); // nur zum testen
 		
-
 	}
-
+	
+	void LeisteAktualisieren() {
+		
+				
+	}
+	
+	void AktenAktualisieren() {
+		
+		
+	}
+	
+	void ZombiesAktualisieren() {
+		
+		
+	}
+	
+	void RundenEnde() {
+		
+		AktenAktualisieren();
+		ZombiesAktualisieren();
+		LeisteAktualisieren();
+				
+	}
+	
 	public void avDown() {
 		if (Avatar.getY() < 9){
 			Avatar.yIncrease();}
+		RundenEnde();
 		this.repaint();
 	}
 	
 	public void avUp() {
 		if (Avatar.getY() > 0){
 			Avatar.yDecrease();}
+		RundenEnde();
 		this.repaint();}
 	
 	public void avLeft() {
 		if (Avatar.getX() > 0){
 			Avatar.xDecrease();}
+		RundenEnde();
 		this.repaint();}
 	
 	public void avRight() {
 		if (Avatar.getX() < 9){
 			Avatar.xIncrease();;}
+		RundenEnde();
 		this.repaint();}
 	
 	public void avWait() {
+		RundenEnde();
 		this.repaint();
 	}
 	
