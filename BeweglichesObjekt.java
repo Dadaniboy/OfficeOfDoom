@@ -5,6 +5,30 @@ public abstract class BeweglichesObjekt {
 	
 	private int x, y;
 	
+	public void xIncrease() {
+		
+		x++;
+		
+	}
+	
+	public void xDecrease() {
+		
+		x--;
+		
+	}
+	
+	public void yIncrease() {
+		
+		y++;
+		
+	}
+	
+	public void yDecrease() {
+		
+		y--;
+		
+	}
+	
 	public BeweglichesObjekt (int x, int y) {
 		
 		this.x = x;
