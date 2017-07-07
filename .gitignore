@@ -12,6 +12,12 @@
 /ButtonLeiste.class
 /SpielFeldArea.class
 /Zombie.class
+<<<<<<< HEAD
 /SpelFeldRaster.class
 /Feld.class
 /SpielFeldRaster.class
+=======
+/Akte.class
+/Spieler.class
+/BeweglichesObjekt.class
+>>>>>>> branch 'master' of https://github.com/Faxinger/OfficeOfDoom.git
