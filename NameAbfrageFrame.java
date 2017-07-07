@@ -61,6 +61,9 @@ public class NameAbfrageFrame extends Frame implements MouseListener {
 
 		HauptFenster.setResizable(false);
 		HauptFenster.setVisible(true);	
+		
+		
+		
 		this.dispose();
 	}
 
