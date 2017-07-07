@@ -25,6 +25,7 @@ public class SpielFeld extends Canvas implements KeyListener{
 	
 	// Sonstige Variablen
 	int Score = 0;
+	int Runde = 0;
 		
 	// Referenzvariablen für Bilder
 	Image bkgrnd = null;
@@ -120,6 +121,7 @@ public class SpielFeld extends Canvas implements KeyListener{
 		AktenAktualisieren();
 		ZombiesAktualisieren();
 		LeisteAktualisieren();
+		Runde ++;
 				
 	}
 	
