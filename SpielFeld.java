@@ -15,7 +15,9 @@ public class SpielFeld extends Canvas implements KeyListener{
 	private static final long serialVersionUID = -8853917516097245471L;
 	int xAv, yAv;
 	Image bkgrnd = null;
-	Image avatar = null;	
+	Image avatar = null;
+	Image inbox = null;
+	Image akte = null;
 	
 	public SpielFeld () {
 		
@@ -41,6 +43,23 @@ public class SpielFeld extends Canvas implements KeyListener{
 		 	e.printStackTrace();
 			System.out.println("Avatar kann nicht geladen werden");
 		}
+		// Inbox laden in inbox
+		try {
+			File sourceimage = new File("Recources/Assets/ablage.png");
+			inbox = ImageIO.read(sourceimage);}
+		catch (IOException e) {
+		 	e.printStackTrace();
+			System.out.println("Ablage kann nicht geladen werden");
+		}
+		
+		// Akte laden in akte
+		try {
+			File sourceimage = new File("Recources/Assets/akte.png");
+			akte = ImageIO.read(sourceimage);}
+		catch (IOException e) {
+		 	e.printStackTrace();
+			System.out.println("Akte kann nicht geladen werden");
+		}
 				
 	}
 	
@@ -48,6 +67,8 @@ public class SpielFeld extends Canvas implements KeyListener{
 	public void paint (Graphics g) {
 		g.drawImage(bkgrnd, 0, 0, null);
 		g.drawImage(avatar, xAv, yAv, null);
+		g.drawImage(inbox, 512-64, 0, null);
+		g.drawImage(akte, 512+64, 0, null); // nur zum testen
 		
 	}
 
